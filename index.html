@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ready, Set, Dink!</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; max-width: 900px; }
+    label { display:block; font-weight:600; margin: 14px 0 6px; }
+    input, textarea, button, select { width: 100%; font-size: 14px; padding: 10px; box-sizing: border-box; }
+    textarea { min-height: 110px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .actions { display:flex; gap: 10px; margin-top: 12px; }
+    .actions button { width: auto; }
+    .hint { color:#444; font-size: 13px; }
+    .error { color:#b00020; white-space: pre-wrap; font-size: 13px; }
+    .ok { color:#0b6b0b; white-space: pre-wrap; font-size: 13px; }
+    code { background: #f3f3f3; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Ready, Set, Dink!</h1>
+
+  <label for="landingUrl">1) Class landing page URL</label>
+  <input id="landingUrl" placeholder="Paste URL here..." />
+
+  <div class="row">
+    <div>
+      <label for="proxy">2) CORS proxy</label>
+      <select id="proxy">
+        <option value="corsproxy_io">corsproxy.io (default)</option>
+        <option value="allorigins_raw">allorigins (raw)</option>
+      </select>
+    </div>
+    <div>
+      <label for="scopeOverride">3) URL scope (optional)</label>
+      <select id="scopeOverride">
+        <option value="">Auto-detect from input URL</option>
+        <option value="SocialSite">Force SocialSite</option>
+        <option value="Clients">Force Clients</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button id="buildBtn">Build EventParticipants URL</button>
+    <button id="copyBtn" disabled>Copy output</button>
+  </div>
+
+  <label for="output">Output URL</label>
+  <textarea id="output" readonly placeholder="Built URL will appear here..."></textarea>
+
+  <div id="status" class="hint"></div>
+  <div id="details" class="hint"></div>
+  
+  <label for="Steps">Steps</label>
+    <p>1. Get the class landing URL by clicking "more info" button on the class you want to register for.</p>
+    <p>2. Paste URL into step 1.</p>
+    <p>3. If it worked, generated URL should say say "Oops... sorry, an error has occurred".</p>
+    <p>4. On registration day, log in to account, and navigate to the generated URL (fastest using Chrome browser). When registration opens, refresh the page by hitting command + R (mac) or ctrl + R (pc).</p>
+    <p>5. Finish registration, quick!</p>
+    <p>6. Pickle.</p>
+
+  <script src="./app.js"></script>
+</body>
+</html>
