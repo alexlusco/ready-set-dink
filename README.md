@@ -6,4 +6,4 @@ Static web app for GitHub Pages that:
 - extracts eventId/locationId
 - prints a BookMe4EventParticipants URL
 
-*App I made to give my 70-year old mother a slight speed advantage, because she regularly loses in the race to register for her pickleball matches in her home city*
+*Context: this is a simple web-based app I programmed in HTML/JS to give my 70-year old mother a slight speed advantage, because she regularly loses in the race to register for her pickleball matches in her home city*
